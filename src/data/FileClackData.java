@@ -1,3 +1,5 @@
+package data;
+
 import java.io.File;
 
 public abstract class FileClackData extends ClackData{
