@@ -1,4 +1,5 @@
 package main;
+import data.ClackData;
 
 public class ClackServer {
     protected int port;
