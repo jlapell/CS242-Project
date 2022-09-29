@@ -1,5 +1,6 @@
 package main;
 import data.ClackData;
+import data.FileClackData;
 
 public class ClackServer {
     protected int port;
@@ -33,13 +34,17 @@ public class ClackServer {
         return port;
     }
 
-    /*public int hashCode(){
-
+    public int hashCode(){
+        return port * dataToReceiveFromClient.hashCode() * dataToSendToClient.hashCode();
     }
 
-    public boolean equals(){
-
-    }*/
+    public boolean equals(Object other){
+        ClackServer otherData = (ClackServer)other;
+        return this.port == otherData.port &&
+                this.closeConnection == otherData.closeConnection &&
+                this.dataToReceiveFromClient == otherData.dataToReceiveFromClient &&
+                this.dataToSendToClient == otherData.dataToSendToClient;
+    }
 
     public String toString(){
         return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +

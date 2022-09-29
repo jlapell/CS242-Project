@@ -1,5 +1,4 @@
 package data;
-
 import java.util.Date;
 
 public abstract class ClackData {
@@ -22,9 +21,7 @@ public abstract class ClackData {
     }
 
     public ClackData(){
-      //  userName;
-       // type;
-
+        this("Anon", -1);
     }
 
     public int getType(){

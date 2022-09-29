@@ -34,9 +34,9 @@ public abstract class FileClackData extends ClackData{
     public void writeFileContents(){
     }
 
-    /*public int hashCode(){
-        return fileName.hashCode() * fileContents.hashCode();
-    }*/
+    public int hashCode(){
+        return fileName.hashCode() * fileContents.hashCode() * super.userName.hashCode() * super.type;
+    }
 
     public boolean equals(Object other) {
         FileClackData otherData = (FileClackData)other;
