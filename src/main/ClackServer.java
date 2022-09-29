@@ -6,10 +6,6 @@ public class ClackServer {
     protected boolean closeConnection;
     protected ClackData dataToReceiveFromClient;
     protected ClackData dataToSendToClient;
-    protected static final int CONSTANT_LISTUSERS = 0;
-    protected static final int CONSTANT_LOGOUT = 1;
-    protected static final int CONSTANT_SENDMESSAGE = 2;
-    protected static final int CONSTANT_SENDFILE = 3;
 
     public ClackServer(int port){
         this.port = port;

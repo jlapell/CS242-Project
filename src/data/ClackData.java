@@ -3,6 +3,10 @@ package data;
 import java.util.Date;
 
 public abstract class ClackData {
+    protected static final int CONSTANT_LISTUSERS = 0;
+    protected static final int CONSTANT_LOGOUT = 1;
+    protected static final int CONSTANT_SENDMESSAGE = 2;
+    protected static final int CONSTANT_SENDFILE = 3;
     protected String userName;
     protected int type;
     protected Date date;
