@@ -2,42 +2,45 @@ package data;
 
 import java.util.Date;
 
-/* Subclass to ClackData
-* implements an instant message function
-* the 'message'
+/**
+ * Subclass to ClackData
+ * implements an instant message function, the 'message'
  */
 
 public class MessageClackData extends ClackData {
     private String message; /* string representing instant message */
 
-    /* constructor to set up username, message, and type using super constructor
+    /**
+     * constructor to set up username, message, and type using super constructor
      */
     public MessageClackData(String userName, String message, int type) {
         super(userName, type);
         this.message = message;
     }
 
-        /* default constructor calling another constructor
-         */
+    /**
+     * default constructor calling another constructor
+     */
     public MessageClackData() {
         this("Anon", null, -1);
     }
 
-    /* return instant message
+    /**
+     * return instant message
      */
     public String getData() {
         return message;
     }
 
-    /* hash code
-    * overridden
+    /**
+     * hash code, overridden
      */
     public int hashCode() {
         return message.hashCode() * userName.hashCode() * type;
     }
 
-    /* equals function
-    * overridden
+    /**
+     * equals function, overridden
      */
     public boolean equals(Object other) {
         MessageClackData otherMessage = (MessageClackData)other;
@@ -46,9 +49,10 @@ public class MessageClackData extends ClackData {
                 this.message == otherMessage.message;
     }
 
-    /* toString override
-    * returns a full description of the class with all instance
-    * variables, including those in the superclass
+    /**
+     * toString override,
+     * returns a full description of the class with all instance
+     * variables, including those in the superclass
      */
     public String toString() {
         return "The username is: " + getUserName() + "\n" +
