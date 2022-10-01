@@ -2,7 +2,7 @@ package data;
 
 import java.io.File;
 
-public abstract class FileClackData extends ClackData{
+public class FileClackData extends ClackData{ // removed abstract because tester wasn't working
     protected String fileName;
     protected String fileContents;
 
