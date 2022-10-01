@@ -15,7 +15,9 @@ public class ClackServer {
     }
 
     public ClackServer(){
-        this(7000); // Needs to be constant?
+        this(7000); // Needs to be constant? - Joseph note
+        // I set this as a variable constant in ClackClient, maybe we set this as a constant in
+        // ClackData like we did the others and then import? Or just import from ClackClient to here - Naida note
     }
 
     public void start(){
