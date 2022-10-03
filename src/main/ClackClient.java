@@ -3,49 +3,24 @@ package main;
 import data.ClackData;
 
 /**
- * ClackClient represents the client user.
+ * ClackClient class representing the client user.
+ * @author Joseph LaPell
+ * @author Naida Torres
  */
 public class ClackClient {
-    /**
-     * String representing name of the client
-     */
     private String userName;
-
-    /**
-     * String representing name of the computer
-     * representing the server.
-     */
     private String hostName;
-
-    /**
-     * Integer representing port number on server
-     * connected to
-     */
     private int port;
-
-    /**
-     * Boolean representing whether connection is
-     * closed or not
-     */
     private boolean closeConnection;
-
-    /**
-     * ClackData object representing data sent to server
-     */
     private ClackData dataToSendToServer;
-
-    /**
-     * ClackData object representing data received from the server
-     */
     private ClackData dataToReceiveFromServer;
+    private static final int CONSTANT_DEFAULTPORT = 7000;
 
     /**
-     * default port number
-     */
-    protected static final int CONSTANT_DEFAULTPORT = 7000;
-
-    /**
-     * Constructor that accepts username, host name, and port
+     * Constructor that sets username, host name, and port
+     * @param userName
+     * @param hostName
+     * @param port
      */
     public ClackClient(String userName, String hostName, int port) {
         this.userName = userName;
@@ -57,22 +32,24 @@ public class ClackClient {
     }
 
     /**
-     * Constructor to set up port to default,
-     * calling another constructor
+     * Constructor to set up port to default, calling another constructor
+     * @param userName
+     * @param hostName
      */
     public ClackClient(String userName, String hostName) {
         this(userName, hostName, CONSTANT_DEFAULTPORT);
     }
 
     /**
-     * constructor that sets host name to be "localhost"
+     * Constructor that sets host name to be "localhost"
+     * @param userName
      */
     public ClackClient(String userName) {
         this(userName, "localhost");
     }
 
     /**
-     * default constructor
+     * Default constructor
      */
     public ClackClient() {
         this("Anon");
@@ -110,6 +87,7 @@ public class ClackClient {
 
     /**
      * returns username
+     * @return userName
      */
     public String getUserName() {
         return userName;
@@ -117,6 +95,7 @@ public class ClackClient {
 
     /**
      * returns host name
+     * @return hostName
      */
     public String getHostName() {
         return hostName;
@@ -124,6 +103,7 @@ public class ClackClient {
 
     /**
      * returns port
+     * @return port
      */
     public int getPort() {
         return port;
@@ -131,6 +111,7 @@ public class ClackClient {
 
     /**
      * hashCode override
+     * @return
      */
     public int hashCode() {
         return userName.hashCode() * hostName.hashCode() * port *
@@ -139,6 +120,8 @@ public class ClackClient {
 
     /**
      * equals override
+     * @param other
+     * @return
      */
     public boolean equals(Object other) {
         ClackClient otherClient = (ClackClient) other;
@@ -151,6 +134,7 @@ public class ClackClient {
 
     /**
      * toString override
+     * @return
      */
     public String toString() {
         return "The username is: " + userName + "\n" +
