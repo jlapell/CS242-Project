@@ -5,6 +5,8 @@ import main.ClackClient;
 /**
  * test driver for ClackClient
  * have not added functions that are not yet implemented
+ * @author Joseph LaPell
+ * @author Naida Torres
  */
 public class TestClackClient {
     public static void main(String[] args) {

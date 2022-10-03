@@ -7,6 +7,8 @@ import data.MessageClackData;
 /**
  * test driver for ClackData
  * have not added functions that are not yet implemented
+ * @author Joseph LaPell
+ * @author Naida Torres
  */
 
 public class TestClackData {

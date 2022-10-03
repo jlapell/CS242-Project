@@ -5,6 +5,8 @@ import main.ClackServer;
 /**
  * test driver for ClackServer
  * did not add tests for functions that are not yet implemented
+ * @author Joseph LaPell
+ * @author Naida Torres
  */
 public class TestClackServer {
     public static void main(String[] args) {
