@@ -2,45 +2,79 @@ package main;
 import data.ClackData;
 import data.FileClackData;
 
+/**
+ * ClackServer represents the clack server
+ */
 public class ClackServer {
     protected int port;
     protected boolean closeConnection;
     protected ClackData dataToReceiveFromClient;
     protected ClackData dataToSendToClient;
+    private static final int CONSTANT_DEFAULTPORT = 7000;
 
+    /**
+     * Constructor that sets port number
+     * @param port
+     */
     public ClackServer(int port){
         this.port = port;
         dataToSendToClient = null;
         dataToReceiveFromClient = null;
     }
 
+    /**
+     * Default construct for ClackServer
+     */
     public ClackServer(){
-        this(7000); // Needs to be constant? - Joseph note
-        // I set this as a variable constant in ClackClient, maybe we set this as a constant in
-        // ClackData like we did the others and then import? Or just import from ClackClient to here - Naida note
+        this(CONSTANT_DEFAULTPORT);
     }
 
+    /**
+     * Declaration of start method
+     */
     public void start(){
 
     }
 
+    /**
+     * Declaration of receiveData method
+     */
     public void receiveData(){
 
     }
 
+    /**
+     * Declaration of sendData method
+     */
     public void sendData(){
 
     }
 
+    /**
+     * Method that returns the port
+     * @return port
+     */
     public int getPort(){
         return port;
     }
 
+    /**
+     * hashCode override
+     * @return
+     */
     public int hashCode(){
         return port * dataToReceiveFromClient.hashCode() * dataToSendToClient.hashCode();
     }
 
+    /**
+     * equals override
+     * @param other
+     */
     public boolean equals(Object other){
+        if(other == null)
+            return false;
+        if(!(other instanceof ClackServer))
+            return false;
         ClackServer otherData = (ClackServer)other;
         return this.port == otherData.port &&
                 this.closeConnection == otherData.closeConnection &&
@@ -48,6 +82,9 @@ public class ClackServer {
                 this.dataToSendToClient == otherData.dataToSendToClient;
     }
 
+    /**
+     * toString override
+     */
     public String toString(){
         return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +
                 "The data to send to client is: " + this.dataToSendToClient + "\n";
