@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee594990-691a-4437-8cdb-3a110c94a28c" name="Changes" comment="Edited ClackData, ClackServer, FileClackData 10/3/22">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/ClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ClackData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/FileClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FileClackData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ClackServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664815493129</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Edited ClackData, ClackServer, FileClackData 10/3/22">
+      <created>1664815732739</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664815732739</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
