@@ -8,7 +8,10 @@ import java.util.Date;
  */
 
 public class MessageClackData extends ClackData {
-    private String message; /** string representing instant message */
+    /**
+     * string representing instant message
+     */
+    private String message;
 
     /**
      * constructor to set up username, message, and type using super constructor
