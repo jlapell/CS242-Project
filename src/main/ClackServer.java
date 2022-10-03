@@ -84,6 +84,7 @@ public class ClackServer {
 
     /**
      * toString override
+     * @return
      */
     public String toString(){
         return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +
