@@ -1,0 +1,10 @@
+10/4/22
+Joseph LaPell
+Naida Torres
+***The Hello World Github test is a branch in this repository***
+
+-In your test classes, what happens if you provide a negative value for a port number, or a null value for a user? 
+Since there is no error checking, the program will accept that values. The variable port number is set to the negative value and the variable user is set to null.
+
+-How do you think you can fix these issues?
+Implement error checking that disallows incorrect inputs. For port number, make it
