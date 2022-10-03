@@ -19,43 +19,58 @@ public abstract class ClackData {
     protected int type;
     protected Date date;
 
-
+    /**
+     * constructor that sets userName, type, and initializes Date
+     * @param userName
+     * @param type
+     */
     public ClackData(String userName, int type){
         this.userName = userName;
         this.type = type;
         this.date = new Date(); // Not sure
     }
 
+    /**
+     * constructor that sets type
+     * @param type
+     */
     public ClackData(int type){
         this("Anon", type);
     }
 
+    /**
+     * default constructor
+     */
     public ClackData(){
         this(CONSTANT_LOGOUT);
     }
 
+    /**
+     * method that returns type
+     * @return type
+     */
     public int getType(){
         return type;
     }
 
     /**
-     *
-     * @return
+     * method that returns userName
+     * @return userName
      */
     public String getUserName(){
         return userName;
     }
 
     /**
-     *
-     * @return
+     * method that returns date
+     * @return date
      */
     public Date getDate(){
         return date;
     }
 
     /**
-     *
+     * declaration of abstract method getData
      */
     public abstract String getData();
 

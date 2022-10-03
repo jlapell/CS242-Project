@@ -37,28 +37,47 @@ public class FileClackData extends ClackData{ // removed abstract because tester
     }
 
     /**
-     *
-     * @return filename
+     * method that returns fileName
+     * @return fileName
      */
     public String getFilename(){
         return fileName;
     }
 
+    /**
+     * method that returns fileContents
+     * @return fileContents
+     */
     public String getData() {
         return fileContents;
     }
 
+    /**
+     * declaration of readFileContents method
+     */
     public void readFileContents(){
     }
 
+    /**
+     * declaration of writeFileContents method
+     */
     public void writeFileContents(){
     }
 
+    /**
+     * hashCode override
+     * @return
+     */
     @Override
     public int hashCode(){
         return fileName.hashCode() * fileContents.hashCode() * super.userName.hashCode() * super.type;
     }
 
+    /**
+     * equals override
+     * @param other
+     * @return
+     */
     @Override
     public boolean equals(Object other) {
         if(other == null)
@@ -73,7 +92,7 @@ public class FileClackData extends ClackData{ // removed abstract because tester
     }
 
     /**
-     *
+     * toString override
      * @return
      */
     @Override
