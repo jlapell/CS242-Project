@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Subclass to ClackData
  */
-public class FileClackData extends ClackData{ // removed abstract because tester wasn't working
+public class FileClackData extends ClackData {
     protected String fileName;
     protected String fileContents;
 
@@ -70,7 +70,10 @@ public class FileClackData extends ClackData{ // removed abstract because tester
      */
     @Override
     public int hashCode(){
-        return fileName.hashCode() * fileContents.hashCode() * super.userName.hashCode() * super.type;
+        int hash = 7;
+        hash = 31 * hash + (fileName == null ? 0 : fileName.hashCode());
+        hash = 31 * hash + (fileContents == null ? 0 : fileContents.hashCode());
+        return hash;
     }
 
     /**

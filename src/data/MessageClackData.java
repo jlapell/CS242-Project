@@ -44,7 +44,10 @@ public class MessageClackData extends ClackData {
      */
     @Override
     public int hashCode() {
-        return message.hashCode() * userName.hashCode() * type;
+        int hash = 7;
+        hash = 31 * hash + (message == null ? 0 : message.hashCode());
+        hash = 31 * hash + (userName == null ? 0 : userName.hashCode());
+        return hash;
     }
 
     /**
