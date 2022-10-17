@@ -62,8 +62,13 @@ public class ClackServer {
      * hashCode override
      * @return
      */
-    public int hashCode(){
-        return port * dataToReceiveFromClient.hashCode() * dataToSendToClient.hashCode();
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + port;
+        hash = 31 * hash + (dataToReceiveFromClient == null ? 0 : dataToReceiveFromClient.hashCode());
+        hash = 31 * hash + (dataToSendToClient == null ? 0 : dataToSendToClient.hashCode());
+        return hash;
     }
 
     /**
