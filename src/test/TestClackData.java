@@ -11,7 +11,7 @@ import data.MessageClackData;
  * @author Naida Torres
  */
 
-public class TestClackData {
+public abstract class TestClackData extends ClackData{
     public static void main(String[] args) {
         ClackData testFileDefault = new FileClackData();
         System.out.println(testFileDefault.getType());

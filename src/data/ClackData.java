@@ -21,10 +21,11 @@ public abstract class ClackData {
 
     /**
      * constructor that sets userName, type, and initializes Date
+     *
      * @param userName
      * @param type
      */
-    public ClackData(String userName, int type){
+    public ClackData(String userName, int type) {
         this.userName = userName;
         this.type = type;
         this.date = new Date(); // Not sure
@@ -32,40 +33,44 @@ public abstract class ClackData {
 
     /**
      * constructor that sets type
+     *
      * @param type
      */
-    public ClackData(int type){
+    public ClackData(int type) {
         this("Anon", type);
     }
 
     /**
      * default constructor
      */
-    public ClackData(){
+    public ClackData() {
         this(CONSTANT_LOGOUT);
     }
 
     /**
      * method that returns type
+     *
      * @return type
      */
-    public int getType(){
+    public int getType() {
         return type;
     }
 
     /**
      * method that returns userName
+     *
      * @return userName
      */
-    public String getUserName(){
+    public String getUserName() {
         return userName;
     }
 
     /**
      * method that returns date
+     *
      * @return date
      */
-    public Date getDate(){
+    public Date getDate() {
         return date;
     }
 
@@ -74,4 +79,52 @@ public abstract class ClackData {
      */
     public abstract String getData();
 
+    /**
+     * delcaration of abstract method getData that takes a key
+     * @param key
+     * @return
+     */
+    public abstract String getData(String key);
+
+    protected String encrypt(String inputStringToEncrypt, String key) {
+        String encryptedString = "";
+        for (int i = 0, j = 0; i < inputStringToEncrypt.length(); i++) {
+            char c = inputStringToEncrypt.charAt(i);
+            if (c == ' '){
+                encryptedString += " ";
+                continue;
+            }else if(Character.isLowerCase(c)){
+                encryptedString += (char) ((c + Character.toLowerCase(key.charAt(j)) - 2 * 'a') % 26 + 'a');
+                j = ++j % key.length();
+                continue;
+            }else if(Character.isUpperCase(c)){
+                encryptedString += (char) ((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
+                j = ++j % key.length();
+                continue;
+            }else continue;
+        }
+        return encryptedString;
+    }
+
+    protected String decrypt(String inputStringToDecrypt, String key) {
+        String decryptedString = "";
+        for (int i = 0, j = 0; i < inputStringToDecrypt.length(); i++) {
+            char c = inputStringToDecrypt.charAt(i);
+            if (c == ' '){
+                decryptedString += " ";
+                continue;
+            }
+            else if (Character.isLowerCase(c)) {
+                decryptedString += (char) ((c - Character.toLowerCase(key.charAt(j)) + 26) % 26 + 'a');
+                j = ++j % key.length();
+                continue;
+            }
+            else if(Character.isUpperCase(c)){
+                decryptedString += (char) ((c - key.charAt(j) + 26) % 26 + 'A');
+                j = ++j % key.length();
+            }
+            else continue;;
+        }
+        return decryptedString;
+    }
 }

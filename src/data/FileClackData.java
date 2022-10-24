@@ -1,6 +1,6 @@
 package data;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * Subclass to ClackData
@@ -53,9 +53,42 @@ public class FileClackData extends ClackData {
     }
 
     /**
-     * declaration of readFileContents method
+     * Read contents from file and write to fileContents
      */
     public void readFileContents(){
+        File file = new File(fileName);
+        try{
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            String nextLine;
+            while((nextLine = bufferedReader.readLine()) != null){
+                fileContents += nextLine;
+            }
+            bufferedReader.close();
+        }catch(FileNotFoundException fnfe){
+            System.err.println("File does not exist");
+        }catch(IOException ioe) {
+            System.err.println("IO exception occurred.");
+        }
+    }
+
+    /**
+     * Read contents from file and write to fileContents, then encrypt them.
+     * @param key
+     */
+    public void readFileContents(String key){
+        File file = new File(fileName);
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            String nextLine;
+            while ((nextLine = bufferedReader.readLine()) != null) {
+                fileContents += nextLine;
+            }
+        }catch(FileNotFoundException fnfe){
+            System.err.println("File does not exist");
+        }catch(IOException ioe) {
+            System.err.println("IO exception occurred.");
+        }
+        encrypt(fileContents, key);
     }
 
     /**
@@ -102,5 +135,10 @@ public class FileClackData extends ClackData {
     public String toString(){
         return "The file name is: " + this.fileName + "\n" +
                 "The file contents are: " + this.fileContents + "\n";
+    }
+
+    @Override
+    public String getData(String key) {
+        return decrypt(fileContents, key);
     }
 }
