@@ -1,6 +1,12 @@
 package main;
 
+import java.io.IOException;
+
 import data.ClackData;
+import data.FileClackData;
+import data.MessageClackData;
+
+import java.util.Scanner;
 
 /**
  * ClackClient class representing the client user.
@@ -14,6 +20,7 @@ public class ClackClient {
     private boolean closeConnection;
     private ClackData dataToSendToServer;
     private ClackData dataToReceiveFromServer;
+    private Scanner inFromStd;
     private static final int CONSTANT_DEFAULTPORT = 7000;
 
     /**
@@ -65,6 +72,29 @@ public class ClackClient {
      * readClientData function declaration
      */
     public void readClientData() {
+        final String command = inFromStd.next();
+        switch(command) {
+            case "DONE":
+                closeConnection = true;
+                dataToSendToServer = new MessageClackData(userName, command, ClackData.CONSTANT_SENDMESSAGE);
+                break;
+            case "SENDFILE":
+                dataToSendToServer = new FileClackData(userName, inFromStd.next(), ClackData.CONSTANT_SENDFILE);
+                try {
+                    ((FileClackData) dataToSendToServer).readFileContents();
+                }
+                catch (IOException ioe) {
+                    dataToSendToServer = null;
+                    System.err.println(ioe);
+                }
+                break;
+            case "LISTUSERS":
+                // not yet implemented
+                break;
+            default:
+                dataToSendToServer = new MessageClackData(userName, command, ClackData.CONSTANT_SENDMESSAGE);
+                break;
+        }
     }
 
     /**
@@ -83,6 +113,9 @@ public class ClackClient {
      * printData function declaration
      */
     public void printData() {
+        System.out.println(dataToReceiveFromServer.getUserName());
+        System.out.println(dataToReceiveFromServer.getType());
+        System.out.println(dataToReceiveFromServer.getData());
     }
 
     /**
