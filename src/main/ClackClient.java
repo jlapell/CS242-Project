@@ -98,7 +98,7 @@ public class ClackClient {
                 try {
                     ((FileClackData) dataToSendToServer).readFileContents();
                 }
-                catch (IOException ioe) {
+                catch (IOException ioe) { // needs to be fixed
                     dataToSendToServer = null;
                     System.err.println(ioe);
                 }
