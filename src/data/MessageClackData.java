@@ -50,6 +50,10 @@ public class MessageClackData extends ClackData {
         return message;
     }
 
+    public String getData(String key) {
+        return decrypt(message, key);
+    }
+
     /**
      * hash code, overridden
      * @return
