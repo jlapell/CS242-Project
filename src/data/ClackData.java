@@ -86,7 +86,7 @@ public abstract class ClackData {
      */
     public abstract String getData(String key);
 
-    protected String encrypt(String inputStringToEncrypt, String key) {
+    protected static String encrypt(String inputStringToEncrypt, String key) {
         String encryptedString = "";
         for (int i = 0, j = 0; i < inputStringToEncrypt.length(); i++) {
             char c = inputStringToEncrypt.charAt(i);
@@ -101,12 +101,13 @@ public abstract class ClackData {
                 encryptedString += (char) ((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
                 j = ++j % key.length();
                 continue;
-            }else continue;
+            }else
+                encryptedString += c;
         }
         return encryptedString;
     }
 
-    protected String decrypt(String inputStringToDecrypt, String key) {
+    protected static String decrypt(String inputStringToDecrypt, String key) {
         String decryptedString = "";
         for (int i = 0, j = 0; i < inputStringToDecrypt.length(); i++) {
             char c = inputStringToDecrypt.charAt(i);
@@ -123,7 +124,9 @@ public abstract class ClackData {
                 decryptedString += (char) ((c - key.charAt(j) + 26) % 26 + 'A');
                 j = ++j % key.length();
             }
-            else continue;;
+            else{
+                decryptedString += c;
+            }
         }
         return decryptedString;
     }

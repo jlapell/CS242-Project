@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee594990-691a-4437-8cdb-3a110c94a28c" name="Changes" comment="10/3/22&#10;JavaDocs">
-      <changelist_data name="Joseph" email="lapelljr@clarkson.edu" />
-      <change afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
+    <list default="true" id="ee594990-691a-4437-8cdb-3a110c94a28c" name="Changes" comment="10/24 Encrypt, decrypt, and some other small stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/ClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/ClackData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/FileClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FileClackData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/MessageClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/MessageClackData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/TestClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestClackData.java" afterDir="false" />
     </list>
@@ -19,6 +16,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Joseph &lt;lapelljr@clarkson.edu&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666031424211</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="10/24 Encrypt, decrypt, and some other small stuff">
+      <created>1666637998231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666637998231</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +147,18 @@
     <MESSAGE value="Edited ClackData, ClackServer, FileClackData 10/3/22" />
     <MESSAGE value="Testing JavaDoc 10/03/22" />
     <MESSAGE value="fixed hashcode" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed hashcode" />
+    <MESSAGE value="10/24 Encrypt, decrypt, and some other small stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="10/24 Encrypt, decrypt, and some other small stuff" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/TestClackData.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
