@@ -42,5 +42,12 @@ public abstract class TestClackData extends ClackData{
         System.out.println(testMessageParameters.hashCode());
         System.out.println(testMessageParameters.equals(testMessageDefault));
         System.out.println(testMessageParameters.toString());
+
+        FileClackData testFileRead = new FileClackData("Test","text.txt",1);
+        String key = "TIME";
+        testFileRead.readFileContents(key);
+        testFileRead.setFileName("text2.txt");
+        testFileRead.writeFileContents();
+        testFileRead.writeFileContents(key);
     }
 }

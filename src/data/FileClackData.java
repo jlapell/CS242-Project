@@ -1,6 +1,8 @@
 package data;
 
 import java.io.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Subclass to ClackData
@@ -60,9 +62,9 @@ public class FileClackData extends ClackData {
         try{
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String nextLine;
-            while((nextLine = bufferedReader.readLine()) != null){
+            fileContents = "";
+            while ((nextLine = bufferedReader.readLine()) != null)
                 fileContents += nextLine;
-            }
             bufferedReader.close();
         }catch(FileNotFoundException fnfe){
             System.err.println("File does not exist");
@@ -80,21 +82,45 @@ public class FileClackData extends ClackData {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String nextLine;
-            while ((nextLine = bufferedReader.readLine()) != null) {
+            fileContents = "";
+            while ((nextLine = bufferedReader.readLine()) != null)
                 fileContents += nextLine;
-            }
+            bufferedReader.close();
         }catch(FileNotFoundException fnfe){
             System.err.println("File does not exist");
         }catch(IOException ioe) {
             System.err.println("IO exception occurred.");
         }
-        encrypt(fileContents, key);
+        fileContents = encrypt(fileContents, key);
     }
 
     /**
      * declaration of writeFileContents method
      */
     public void writeFileContents(){
+        File file = new File(fileName);
+        try{
+            PrintWriter writeFile = new PrintWriter(file);
+            writeFile.println(fileContents);
+            writeFile.close();
+        }catch(FileNotFoundException fnfe){
+            System.err.println("File does not exist");
+        }catch(IOException ioe) {
+            System.err.println("IO exception occurred.");
+        }
+    }
+
+    public void writeFileContents(String key){
+        File file = new File(fileName);
+        try{
+            PrintWriter writeFile = new PrintWriter(file);
+            writeFile.println(decrypt(fileContents, key));
+            writeFile.close();
+        }catch(FileNotFoundException fnfe){
+            System.err.println("File does not exist");
+        }catch(IOException ioe) {
+            System.err.println("IO exception occurred.");
+        }
     }
 
     /**
@@ -137,6 +163,11 @@ public class FileClackData extends ClackData {
                 "The file contents are: " + this.fileContents + "\n";
     }
 
+    /**
+     * Method that takes a key and returns the decrypted file contents
+     * @param key
+     * @return
+     */
     @Override
     public String getData(String key) {
         return decrypt(fileContents, key);

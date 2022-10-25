@@ -86,7 +86,13 @@ public abstract class ClackData {
      */
     public abstract String getData(String key);
 
-    protected static String encrypt(String inputStringToEncrypt, String key) {
+    /**
+     * Method that takes a string and a key, then encrypts string using vigenere cipher
+     * @param inputStringToEncrypt
+     * @param key
+     * @return
+     */
+    protected  String encrypt(String inputStringToEncrypt, String key) {
         String encryptedString = "";
         for (int i = 0, j = 0; i < inputStringToEncrypt.length(); i++) {
             char c = inputStringToEncrypt.charAt(i);
@@ -107,7 +113,13 @@ public abstract class ClackData {
         return encryptedString;
     }
 
-    protected static String decrypt(String inputStringToDecrypt, String key) {
+    /**
+     * Method that takes an encrypted string and a key, and then returns the decrypted string
+     * @param inputStringToDecrypt
+     * @param key
+     * @return
+     */
+    protected String decrypt(String inputStringToDecrypt, String key) {
         String decryptedString = "";
         for (int i = 0, j = 0; i < inputStringToDecrypt.length(); i++) {
             char c = inputStringToDecrypt.charAt(i);
