@@ -68,6 +68,7 @@ public class ClackServer {
         hash = 31 * hash + port;
         hash = 31 * hash + (dataToReceiveFromClient == null ? 0 : dataToReceiveFromClient.hashCode());
         hash = 31 * hash + (dataToSendToClient == null ? 0 : dataToSendToClient.hashCode());
+        hash = 31 * hash + (closeConnection ? 0 : 1);
         return hash;
     }
 
@@ -93,6 +94,8 @@ public class ClackServer {
      */
     public String toString(){
         return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +
-                "The data to send to client is: " + this.dataToSendToClient + "\n";
+                "The data to send to client is: " + this.dataToSendToClient + "\n" +
+                "The connection status is: " + (this.closeConnection ? "Closed" : "Open") + "\n" +
+                "The port number is: " + this.port + "\n";
     }
 }

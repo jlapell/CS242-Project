@@ -67,6 +67,7 @@ public class MessageClackData extends ClackData {
         int hash = 7;
         hash = 31 * hash + (message == null ? 0 : message.hashCode());
         hash = 31 * hash + (userName == null ? 0 : userName.hashCode());
+        hash = 31 * hash + type;
         return hash;
     }
 
@@ -94,8 +95,9 @@ public class MessageClackData extends ClackData {
      */
     @Override
     public String toString() {
-        return "The username is: " + getUserName() + "\n" +
-                "The type is: " + getType() + "\n" +
-                "The message is: " + message + "\n";
+        return "The username is: " + this.userName + "\n" +
+                "The type is: " + this.type + "\n" +
+                "The message is: " + this.message + "\n" +
+                "The date is: " + this.date.toString() + "\n";
     }
 }

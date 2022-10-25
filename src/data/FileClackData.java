@@ -132,6 +132,8 @@ public class FileClackData extends ClackData {
         int hash = 7;
         hash = 31 * hash + (fileName == null ? 0 : fileName.hashCode());
         hash = 31 * hash + (fileContents == null ? 0 : fileContents.hashCode());
+        hash = 31 * hash + (userName == null ? 0 : userName.hashCode());
+        hash = 31 * hash + type;
         return hash;
     }
 
@@ -160,7 +162,10 @@ public class FileClackData extends ClackData {
     @Override
     public String toString(){
         return "The file name is: " + this.fileName + "\n" +
-                "The file contents are: " + this.fileContents + "\n";
+                "The file contents are: " + this.fileContents + "\n" +
+                "The username is: " + this.userName + "\n" +
+                "The type is: " + this.type + "\n" +
+                "The date is: " + this.date.toString() + "\n";
     }
 
     /**

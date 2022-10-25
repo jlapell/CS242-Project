@@ -189,11 +189,11 @@ public class ClackClient {
      * @return
      */
     public String toString() {
-        return "The username is: " + userName + "\n" +
-                "The hostname is: " + hostName + "\n" +
-                "The port is: " + port + "\n" +
-                "The connection is: " + closeConnection + "\n" +
-                "The data sent to the server is: " + dataToSendToServer + "\n" +
-                "The data received from the server is: " + dataToReceiveFromServer + "\n";
+        return "The username is: " + this.userName + "\n" +
+                "The hostname is: " + this.hostName + "\n" +
+                "The port is: " + this.port + "\n" +
+                "The connection is: " + this.closeConnection + "\n" +
+                "The data sent to the server is: " + this.dataToSendToServer + "\n" +
+                "The data received from the server is: " + this.dataToReceiveFromServer + "\n";
     }
 }
