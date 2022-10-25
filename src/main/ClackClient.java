@@ -1,7 +1,5 @@
 package main;
 
-import java.io.IOException;
-
 import data.ClackData;
 import data.FileClackData;
 import data.MessageClackData;
@@ -98,9 +96,9 @@ public class ClackClient {
                 try {
                     ((FileClackData) dataToSendToServer).readFileContents();
                 }
-                catch (IOException ioe) { // needs to be fixed
+                catch (Exception e) { // ask TA if this is correct
                     dataToSendToServer = null;
-                    System.err.println(ioe);
+                    System.err.println(e);
                 }
                 break;
             case "LISTUSERS":
