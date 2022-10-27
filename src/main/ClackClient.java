@@ -74,7 +74,6 @@ public class ClackClient {
      */
     public void start() {
         while (!closeConnection) {
-            inFromStd = new Scanner(System.in);
             this.readClientData();
             this.printData();
             dataToReceiveFromServer = dataToSendToServer;
@@ -85,6 +84,7 @@ public class ClackClient {
      * readClientData function declaration
      */
     public void readClientData() {
+        inFromStd = new Scanner(System.in);
         final String command = inFromStd.next();
         switch(command) {
             case "DONE":
