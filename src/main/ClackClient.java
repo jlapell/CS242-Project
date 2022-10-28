@@ -139,8 +139,8 @@ public class ClackClient {
     public void printData() {
         if (dataToReceiveFromServer == null) return;
         System.out.println("User: " + dataToReceiveFromServer.getUserName());
-        System.out.println(dataToReceiveFromServer.getDate());
-        System.out.println(dataToReceiveFromServer.getData(CONSTANT_DEFAULTKEY));
+        System.out.println("Date: " + dataToReceiveFromServer.getDate());
+        System.out.println("Data: " + dataToReceiveFromServer.getData(CONSTANT_DEFAULTKEY));
     }
 
     /**
