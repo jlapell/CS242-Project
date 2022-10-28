@@ -20,6 +20,8 @@ public class ClackClient {
     private ClackData dataToReceiveFromServer;
     private Scanner inFromStd;
     private static final int CONSTANT_DEFAULTPORT = 7000;
+    private static final String CONSTANT_DEFAULTKEY = "Default Key"; // key constant??
+
 
     /**
      * Constructor that sets username, host name, and port
@@ -87,6 +89,7 @@ public class ClackClient {
     /**
      * reads the data from the client
      * does not return anything
+     * not yet finished as of part 2
      */
     public void readClientData() {
         final String command = inFromStd.next();
