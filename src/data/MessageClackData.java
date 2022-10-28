@@ -52,8 +52,10 @@ public class MessageClackData extends ClackData {
 
     /**
     * returns a decrypted message
-     * @return message
+     * @param key
+     * @return
      */
+    @Override
     public String getData(String key) {
         return decrypt(message, key);
     }

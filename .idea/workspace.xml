@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="ClackClient edited 10/24/22">
+    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="ClackClient edited 10/27/22, edited start and readClientData">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/FileClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/FileClackData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/MessageClackData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/MessageClackData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ClackClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ClackServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666642803344</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ClackClient edited 10/27/22, edited start and readClientData">
+      <created>1666913991628</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666913991628</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +172,7 @@
     <MESSAGE value="ClackClient and MessageClackData edited 10/24/22" />
     <MESSAGE value="ClackClient edited 10/24/22" />
     <MESSAGE value="Implemented readFile and writeFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented readFile and writeFile" />
+    <MESSAGE value="ClackClient edited 10/27/22, edited start and readClientData" />
+    <option name="LAST_COMMIT_MESSAGE" value="ClackClient edited 10/27/22, edited start and readClientData" />
   </component>
 </project>

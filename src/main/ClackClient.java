@@ -70,9 +70,13 @@ public class ClackClient {
     }
 
     /**
-     * start function declaration
+     * does not return anything but starts the connection
+     * read data from the client
+     * prints the data out
+     * not yet finished as of part 2
      */
     public void start() {
+        inFromStd = new Scanner(System.in);
         while (!closeConnection) {
             this.readClientData();
             this.printData();
@@ -81,10 +85,10 @@ public class ClackClient {
     }
 
     /**
-     * readClientData function declaration
+     * reads the data from the client
+     * does not return anything
      */
     public void readClientData() {
-        inFromStd = new Scanner(System.in);
         final String command = inFromStd.next();
         switch(command) {
             case "DONE":
@@ -123,7 +127,7 @@ public class ClackClient {
     }
 
     /**
-     * printData function declaration
+     * prints the recieved data to standard output
      */
     public void printData() {
         System.out.println(dataToReceiveFromServer.getUserName());
