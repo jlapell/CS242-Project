@@ -4,6 +4,8 @@ import data.ClackData;
 import data.FileClackData;
 import data.MessageClackData;
 
+import java.io.IOException;
+
 /**
  * test driver for ClackData
  * have not added functions that are not yet implemented
@@ -45,9 +47,12 @@ public abstract class TestClackData extends ClackData{
 
         FileClackData testFileRead = new FileClackData("Test","text.txt",1);
         String key = "TIME";
-        testFileRead.readFileContents(key);
+        try {
+            testFileRead.readFileContents(key);
+        } catch (IOException e) {
+            System.out.println(" No exception should be thrown.");
+        }
         testFileRead.setFileName("text2.txt");
         testFileRead.writeFileContents();
-        testFileRead.writeFileContents(key);
     }
 }

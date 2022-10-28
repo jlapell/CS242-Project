@@ -33,12 +33,14 @@ public class TestClackClient {
         System.out.println(testHostName.equals(testDefault));
         System.out.println(testHostName.toString());
 
-        ClackClient testPort = new ClackClient("TestUser", "TestHost", 1000);
+        ClackClient testPort = new ClackClient("TestUser", "TestHost", 1024);
         System.out.println(testPort.getUserName());
         System.out.println(testPort.getHostName());
         System.out.println(testPort.getPort());
         System.out.println(testPort.hashCode());
         System.out.println(testPort.equals(testDefault));
         System.out.println(testPort.toString());
+
+        testPort.start();
     }
 }

@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 /**
  * ClackClient class representing the client user.
+ *
  * @author Joseph LaPell
  * @author Naida Torres
  */
@@ -20,11 +21,12 @@ public class ClackClient {
     private ClackData dataToReceiveFromServer;
     private Scanner inFromStd;
     private static final int CONSTANT_DEFAULTPORT = 7000;
-    private static final String CONSTANT_DEFAULTKEY = "Default Key"; // key constant??
+    private static final String CONSTANT_DEFAULTKEY = "DefaultKey"; // key constant??
 
 
     /**
      * Constructor that sets username, host name, and port
+     *
      * @param userName
      * @param hostName
      * @param port
@@ -49,6 +51,7 @@ public class ClackClient {
 
     /**
      * Constructor to set up port to default, calling another constructor
+     *
      * @param userName
      * @param hostName
      */
@@ -58,6 +61,7 @@ public class ClackClient {
 
     /**
      * Constructor that sets host name to be "localhost"
+     *
      * @param userName
      */
     public ClackClient(String userName) {
@@ -81,8 +85,8 @@ public class ClackClient {
         inFromStd = new Scanner(System.in);
         while (!closeConnection) {
             this.readClientData();
-            this.printData();
             dataToReceiveFromServer = dataToSendToServer;
+            this.printData();
         }
     }
 
@@ -93,26 +97,26 @@ public class ClackClient {
      */
     public void readClientData() {
         final String command = inFromStd.next();
-        switch(command) {
+        switch (command) {
             case "DONE":
                 closeConnection = true;
-                dataToSendToServer = new MessageClackData(userName, command, ClackData.CONSTANT_SENDMESSAGE);
+                dataToSendToServer = new MessageClackData(userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
                 break;
             case "SENDFILE":
                 dataToSendToServer = new FileClackData(userName, inFromStd.next(), ClackData.CONSTANT_SENDFILE);
                 try {
-                    ((FileClackData) dataToSendToServer).readFileContents();
-                }
-                catch (Exception e) { // ask TA if this is correct
+                    ((FileClackData) dataToSendToServer).readFileContents(CONSTANT_DEFAULTKEY);
+                } catch (Exception e) { // ask TA if this is correct
                     dataToSendToServer = null;
-                    System.err.println(e);
+                    System.err.println("The file cannot be read: " + e);
                 }
                 break;
             case "LISTUSERS":
                 // not yet implemented
                 break;
             default:
-                dataToSendToServer = new MessageClackData(userName, command, ClackData.CONSTANT_SENDMESSAGE);
+                String message = command + inFromStd.nextLine();
+                dataToSendToServer = new MessageClackData(userName, message, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
                 break;
         }
     }
@@ -133,13 +137,15 @@ public class ClackClient {
      * prints the recieved data to standard output
      */
     public void printData() {
-        System.out.println(dataToReceiveFromServer.getUserName());
-        System.out.println(dataToReceiveFromServer.getType());
-        System.out.println(dataToReceiveFromServer.getData());
+        if (dataToReceiveFromServer == null) return;
+        System.out.println("User: " + dataToReceiveFromServer.getUserName());
+        System.out.println(dataToReceiveFromServer.getDate());
+        System.out.println(dataToReceiveFromServer.getData(CONSTANT_DEFAULTKEY));
     }
 
     /**
      * returns username
+     *
      * @return userName
      */
     public String getUserName() {
@@ -148,6 +154,7 @@ public class ClackClient {
 
     /**
      * returns host name
+     *
      * @return hostName
      */
     public String getHostName() {
@@ -156,6 +163,7 @@ public class ClackClient {
 
     /**
      * returns port
+     *
      * @return port
      */
     public int getPort() {
@@ -164,6 +172,7 @@ public class ClackClient {
 
     /**
      * hashCode override
+     *
      * @return
      */
     @Override
@@ -179,6 +188,7 @@ public class ClackClient {
 
     /**
      * equals override
+     *
      * @param other
      * @return
      */
@@ -193,6 +203,7 @@ public class ClackClient {
 
     /**
      * toString override
+     *
      * @return
      */
     public String toString() {

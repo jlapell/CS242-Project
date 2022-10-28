@@ -98,15 +98,15 @@ public abstract class ClackData {
             char c = inputStringToEncrypt.charAt(i);
             if (c == ' '){
                 encryptedString += " ";
-                continue;
+//                continue;
             }else if(Character.isLowerCase(c)){
                 encryptedString += (char) ((c + Character.toLowerCase(key.charAt(j)) - 2 * 'a') % 26 + 'a');
                 j = ++j % key.length();
-                continue;
+//                continue;
             }else if(Character.isUpperCase(c)){
-                encryptedString += (char) ((c + key.charAt(j) - 2 * 'A') % 26 + 'A');
+                encryptedString += (char) ((c + Character.toUpperCase(key.charAt(j)) - 2 * 'A') % 26 + 'A');
                 j = ++j % key.length();
-                continue;
+//                continue;
             }else
                 encryptedString += c;
         }
@@ -125,15 +125,15 @@ public abstract class ClackData {
             char c = inputStringToDecrypt.charAt(i);
             if (c == ' '){
                 decryptedString += " ";
-                continue;
+//                continue;
             }
             else if (Character.isLowerCase(c)) {
                 decryptedString += (char) ((c - Character.toLowerCase(key.charAt(j)) + 26) % 26 + 'a');
                 j = ++j % key.length();
-                continue;
+//                continue;
             }
             else if(Character.isUpperCase(c)){
-                decryptedString += (char) ((c - key.charAt(j) + 26) % 26 + 'A');
+                decryptedString += (char) ((c - Character.toUpperCase(key.charAt(j)) + 26) % 26 + 'A');
                 j = ++j % key.length();
             }
             else{

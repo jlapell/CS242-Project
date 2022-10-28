@@ -30,7 +30,7 @@ public class MessageClackData extends ClackData {
      * @param key
      * @param type
      */
-    MessageClackData(String userName, String message, String key, int type) {
+    public MessageClackData(String userName, String message, String key, int type) {
         super(userName, type);
         this.message = encrypt(message, key);
     }
