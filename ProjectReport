@@ -1,3 +1,80 @@
+10/28/22
+Naida Torres
+Joseph LaPell
+TestClackClient output:
+"C:\Program Files\Java\jdk1.8.0_341\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\lib\idea_rt.jar=50828:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_341\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\rt.jar;C:\Users\josep\IdeaProjects\CS242Project\out\production\CS242Project" test.TestClackClient
+Anon
+localhost
+7000
+902069272
+The username is: Anon
+The hostname is: localhost
+The port is: 7000
+The connection is: false
+The data sent to the server is: null
+The data received from the server is: null
+
+TestUser
+localhost
+7000
+1216920007
+false
+The username is: TestUser
+The hostname is: localhost
+The port is: 7000
+The connection is: false
+The data sent to the server is: null
+The data received from the server is: null
+
+TestUser
+TestHost
+7000
+-1690096146
+false
+The username is: TestUser
+The hostname is: TestHost
+The port is: 7000
+The connection is: false
+The data sent to the server is: null
+The data received from the server is: null
+
+TestUser
+TestHost
+1024
+1380876950
+false
+The username is: TestUser
+The hostname is: TestHost
+The port is: 1024
+The connection is: false
+The data sent to the server is: null
+The data received from the server is: null
+
+a
+User: TestUser
+Date: Fri Oct 28 12:05:41 EDT 2022
+Message: a
+s
+User: TestUser
+Date: Fri Oct 28 12:05:43 EDT 2022
+Message: s
+TEST
+User: TestUser
+Date: Fri Oct 28 12:05:53 EDT 2022
+Message: TEST
+SENDFILE text.txt
+User: TestUser
+Date: Fri Oct 28 12:05:59 EDT 2022
+Message: brave new world
+DONE
+User: TestUser
+Date: Fri Oct 28 12:06:01 EDT 2022
+Message: DONE
+
+Process finished with exit code 0
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 10/4/22
 Joseph LaPell
 Naida Torres
