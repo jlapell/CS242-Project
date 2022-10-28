@@ -4,7 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="JavaDac" />
+    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="JavaDoc2">
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/ClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/FileClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/MessageClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/data/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/index-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/main/ClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/main/ClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/main/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/TestClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/TestClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/TestClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part1)/test/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/ClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/FileClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/MessageClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/data/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/index-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/main/ClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/main/ClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/main/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/TestClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/TestClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/TestClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part2)/test/package-tree.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666973434656</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="JavaDoc2">
+      <created>1666973845490</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1666973845490</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +286,7 @@
     <MESSAGE value="edited ClackClient and MessageClackData 10/28/22 JavaDoc comments and some functions" />
     <MESSAGE value="After TA" />
     <MESSAGE value="JavaDac" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDac" />
+    <MESSAGE value="JavaDoc2" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc2" />
   </component>
 </project>
