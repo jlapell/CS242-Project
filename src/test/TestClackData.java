@@ -54,5 +54,12 @@ public abstract class TestClackData extends ClackData{
         }
         testFileRead.setFileName("text2.txt");
         testFileRead.writeFileContents();
+        testFileRead.setFileName("text3.txt");
+        testFileRead.writeFileContents(key);
+        try{
+            testFileRead.readFileContents();
+        }catch (IOException e){
+            System.out.println("No exception should be thrown.");
+        }
     }
 }
