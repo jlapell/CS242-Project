@@ -249,9 +249,16 @@ public class ClackClient {
      * @return
      */
     public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof ClackClient)) {
+            return false;
+        }
+
         ClackClient otherClient = (ClackClient) other;
-        return this.userName == otherClient.userName &&
-                this.hostName == otherClient.hostName &&
+        return this.userName.equals(otherClient.userName) &&
+                this.hostName.equals(otherClient.hostName) &&
                 this.port == otherClient.port &&
                 this.dataToSendToServer == otherClient.dataToSendToServer &&
                 this.dataToReceiveFromServer == otherClient.dataToReceiveFromServer;
@@ -269,5 +276,9 @@ public class ClackClient {
                 "The connection is: " + this.closeConnection + "\n" +
                 "The data sent to the server is: " + this.dataToSendToServer + "\n" +
                 "The data received from the server is: " + this.dataToReceiveFromServer + "\n";
+    }
+
+    public static void main(String[] args) {
+
     }
 }
