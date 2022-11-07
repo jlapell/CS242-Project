@@ -278,7 +278,48 @@ public class ClackClient {
                 "The data received from the server is: " + this.dataToReceiveFromServer + "\n";
     }
 
-    public static void main(String[] args) {
-
+    /**
+     * main method
+     * uses command line arguments to create a new ClackClient object
+     * and starts said object
+     *
+     * @param args
+     */
+    public static void main(String[] args) { // ask TA if this is correct, better as switch?
+        try {
+            ClackClient client;
+            if (args.length > 0) {
+                final String input = args[0];
+                if (input.contains("@")) {
+                    if (input.contains(":")) {
+                        // username, hostname, port
+                        final String username = input.split("@")[0];
+                        final String hostname = input.split("@")[1].split(":")[0];
+                        final int port = Integer.parseInt(input.split(":")[1]);
+                        client = new ClackClient(username, hostname, port);
+                    } else {
+                        // username, hostname
+                        final String username = input.split("@")[0];
+                        final String hostname = input.split("@")[1];
+                        client = new ClackClient(username, hostname);
+                    }
+                }
+                else {
+                    // username
+                    client = new ClackClient(input);
+                }
+            }
+            else {
+                // default
+                client = new ClackClient();
+            }
+            client.start();
+        }
+        catch (ArrayIndexOutOfBoundsException aiobe) {
+            System.err.println("Array index out of bounds: " + aiobe);
+        }
+        catch (NumberFormatException nfe) {
+            System.err.println("Number format exception: " + nfe);
+        }
     }
 }
