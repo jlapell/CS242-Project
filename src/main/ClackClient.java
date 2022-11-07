@@ -4,6 +4,12 @@ import data.ClackData;
 import data.FileClackData;
 import data.MessageClackData;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.NoRouteToHostException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 /**
@@ -20,8 +26,10 @@ public class ClackClient {
     private ClackData dataToSendToServer;
     private ClackData dataToReceiveFromServer;
     private Scanner inFromStd;
+    private ObjectInputStream inFromServer;
+    private ObjectOutputStream outToServer;
     private static final int CONSTANT_DEFAULTPORT = 7000;
-    private static final String CONSTANT_DEFAULTKEY = "DefaultKey"; // key constant??
+    private static final String CONSTANT_DEFAULTKEY = "DefaultKey";
 
 
     /**
@@ -47,6 +55,8 @@ public class ClackClient {
         closeConnection = false;
         dataToSendToServer = null;
         dataToReceiveFromServer = null;
+        inFromServer = null;
+        outToServer = null;
     }
 
     /**
@@ -79,14 +89,31 @@ public class ClackClient {
      * does not return anything but starts the connection
      * read data from the client
      * prints the data out
-     * not yet finished as of part 2
      */
-    public void start() {
-        inFromStd = new Scanner(System.in);
-        while (!closeConnection) {
-            this.readClientData();
-            dataToReceiveFromServer = dataToSendToServer;
-            this.printData();
+    public void start() { // ask TA if this is correct
+        try {
+            this.inFromStd = new Scanner(System.in);
+            Socket skt = new Socket(hostName, port);
+            outToServer = new ObjectOutputStream(skt.getOutputStream());
+            inFromServer = new ObjectInputStream(skt.getInputStream());
+            while (!closeConnection) {
+                this.readClientData();
+                this.sendData(); // unsure
+                // 2.2 says to break this: dataToReceiveFromServer = this.dataToSendToServer;
+                this.receiveData(); // unsure
+                this.printData();
+            }
+            this.inFromStd.close();
+            skt.close();
+        }
+        catch (UnknownHostException uhe) {
+            System.err.println("Unknown host: " + uhe);
+        }
+        catch (NoRouteToHostException nrthe) {
+            System.err.println("No route to host: " + nrthe);
+        }
+        catch (IOException ioe) {
+            System.err.println("IOException: " + ioe);
         }
     }
 
@@ -99,15 +126,15 @@ public class ClackClient {
         final String command = inFromStd.next();
         switch (command) {
             case "DONE":
-                closeConnection = true;
-                dataToSendToServer = new MessageClackData(userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
+                this.closeConnection = true;
+                this.dataToSendToServer = new MessageClackData(this.userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
                 break;
             case "SENDFILE":
-                dataToSendToServer = new FileClackData(userName, inFromStd.next(), ClackData.CONSTANT_SENDFILE);
+                this.dataToSendToServer = new FileClackData(this.userName, inFromStd.next(), ClackData.CONSTANT_SENDFILE);
                 try {
-                    ((FileClackData) dataToSendToServer).readFileContents(CONSTANT_DEFAULTKEY);
-                } catch (Exception e) { // ask TA if this is correct
-                    dataToSendToServer = null;
+                    ((FileClackData) this.dataToSendToServer).readFileContents(CONSTANT_DEFAULTKEY);
+                } catch (Exception e) {
+                    this.dataToSendToServer = null;
                     System.err.println("The file cannot be read: " + e);
                 }
                 break;
@@ -115,29 +142,58 @@ public class ClackClient {
                 // not yet implemented
                 break;
             default:
-                String message = command + inFromStd.nextLine();
-                dataToSendToServer = new MessageClackData(userName, message, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
+                String message = command + this.inFromStd.nextLine();
+                dataToSendToServer = new MessageClackData(this.userName, message, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
                 break;
         }
     }
 
     /**
-     * sendData function declaration
+     * sendData function
+     * sends data to server, does not return anything
      */
     public void sendData() {
+        try {
+            outToServer.writeObject(dataToSendToServer);
+        }
+        catch (UnknownHostException uhe) {
+            System.err.println("Unknown host: " + uhe);
+        }
+        catch (NoRouteToHostException nrthe) {
+            System.err.println("No route to host: " + nrthe);
+        }
+        catch (IOException ioe) {
+            System.err.println("IOException: " + ioe);
+        }
     }
 
     /**
-     * receiveData function declaration
+     * receiveData function
+     * receives data from the server, does not return anything
      */
     public void receiveData() {
+        try {
+            dataToReceiveFromServer = (ClackData) inFromServer.readObject();
+        }
+        catch (UnknownHostException uhe) {
+            System.err.println("Unknown host: " + uhe);
+        }
+        catch (NoRouteToHostException nrthe) {
+            System.err.println("No route to host: " + nrthe);
+        }
+        catch (IOException ioe) {
+            System.err.println("IOException: " + ioe);
+        }
+        catch (ClassNotFoundException cnfe) {
+            System.err.println("Class not found: " + cnfe);
+        }
     }
 
     /**
-     * prints the recieved data to standard output
+     * prints the received data to standard output
      */
     public void printData() {
-        if (dataToReceiveFromServer == null) return;
+        if (this.dataToReceiveFromServer == null) return;
         System.out.println("User: " + dataToReceiveFromServer.getUserName());
         System.out.println("Date: " + dataToReceiveFromServer.getDate());
         System.out.println("Message: " + dataToReceiveFromServer.getData(CONSTANT_DEFAULTKEY));
