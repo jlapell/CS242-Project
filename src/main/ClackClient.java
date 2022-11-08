@@ -103,6 +103,8 @@ public class ClackClient {
                 this.receiveData(); // unsure
                 this.printData();
             }
+            inFromServer.close();
+            outToServer.close();
             this.inFromStd.close();
             skt.close();
         }

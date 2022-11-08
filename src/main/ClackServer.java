@@ -46,12 +46,12 @@ public class ClackServer {
         try {
             ServerSocket sskt = new ServerSocket(CONSTANT_DEFAULTPORT);
             Socket clientSkt = sskt.accept();
-            inFromClient = new ObjectInputStream((clientSkt.getInputStream()));
+            inFromClient = new ObjectInputStream(clientSkt.getInputStream());
             outToClient = new ObjectOutputStream(clientSkt.getOutputStream());
             while (!closeConnection) {
-                receiveData();
+                this.receiveData();
                 dataToSendToClient = dataToReceiveFromClient;
-                sendData();
+                this.sendData();
             }
             outToClient.close();
             inFromClient.close();
@@ -71,10 +71,10 @@ public class ClackServer {
      */
     public void receiveData() {
         try {
-            if (something)
-                closeConnection = true;
-            dataToReceiveFromClient = (ClackData) inFromClient.readObject();
-        } catch (IOException ioe) {
+            while(!closeConnection){//Dunno
+                dataToReceiveFromClient = (ClackData) inFromClient.readObject();
+            }
+        }catch (IOException ioe) {
             System.err.println("IO exception occurred");
         } catch (ClassNotFoundException cnfe) {
             System.err.println("Class not found exception occurred");
@@ -151,5 +151,6 @@ public class ClackServer {
                 server = new ClackServer();
             else
                 server = new ClackServer(Integer.parseInt(args[0]));
+            server.start();
     }
 }
