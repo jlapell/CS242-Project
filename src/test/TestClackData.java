@@ -61,5 +61,6 @@ public abstract class TestClackData extends ClackData{
         }catch (IOException e){
             System.out.println("No exception should be thrown.");
         }
+        System.out.println(testFileRead.getData());
     }
 }

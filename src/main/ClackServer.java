@@ -1,7 +1,10 @@
 package main;
+import com.sun.security.ntlm.Server;
 import data.ClackData;
 import data.FileClackData;
 
+import java.io.*;
+import java.net.*;
 /**
  * ClackServer represents the clack server
  */
@@ -12,11 +15,18 @@ public class ClackServer {
     protected ClackData dataToSendToClient;
     private static final int CONSTANT_DEFAULTPORT = 7000;
 
+    private ObjectInputStream inFromClient;
+
+    private ObjectOutputStream outToClient;
+
     /**
      * Constructor that sets port number
+     *
      * @param port
      */
-    public ClackServer(int port){
+    public ClackServer(int port) {
+        if (port < 1024)
+            throw new IllegalArgumentException("Port cannot be less than 1024.");
         this.port = port;
         dataToSendToClient = null;
         dataToReceiveFromClient = null;
@@ -25,41 +35,75 @@ public class ClackServer {
     /**
      * Default construct for ClackServer
      */
-    public ClackServer(){
+    public ClackServer() {
         this(CONSTANT_DEFAULTPORT);
     }
 
     /**
      * Declaration of start method
      */
-    public void start(){
-
+    public void start() {
+        try {
+            ServerSocket sskt = new ServerSocket(CONSTANT_DEFAULTPORT);
+            Socket clientSkt = sskt.accept();
+            inFromClient = new ObjectInputStream((clientSkt.getInputStream()));
+            outToClient = new ObjectOutputStream(clientSkt.getOutputStream());
+            while (!closeConnection) {
+                receiveData();
+                dataToSendToClient = dataToReceiveFromClient;
+                sendData();
+            }
+            outToClient.close();
+            inFromClient.close();
+            clientSkt.close();
+            sskt.close();
+        } catch (SecurityException se) {
+            System.err.println("Security exception occurred");
+        } catch (IllegalArgumentException iae) {
+            System.err.println("Illegal argument exception occurred");
+        } catch (IOException ioe) {
+            System.err.println("IO exception occurred");
+        }
     }
 
     /**
      * Declaration of receiveData method
      */
-    public void receiveData(){
-
+    public void receiveData() {
+        try {
+            if (something)
+                closeConnection = true;
+            dataToReceiveFromClient = (ClackData) inFromClient.readObject();
+        } catch (IOException ioe) {
+            System.err.println("IO exception occurred");
+        } catch (ClassNotFoundException cnfe) {
+            System.err.println("Class not found exception occurred");
+        }
     }
 
     /**
      * Declaration of sendData method
      */
-    public void sendData(){
-
+    public void sendData() {
+        try {
+            outToClient.writeObject(dataToSendToClient);
+        } catch (IOException ioe) {
+            System.err.println("IO exception occurred");
+        }
     }
 
     /**
      * Method that returns the port
+     *
      * @return port
      */
-    public int getPort(){
+    public int getPort() {
         return port;
     }
 
     /**
      * hashCode override
+     *
      * @return
      */
     @Override
@@ -74,14 +118,15 @@ public class ClackServer {
 
     /**
      * equals override
+     *
      * @param other
      */
-    public boolean equals(Object other){
-        if(other == null)
+    public boolean equals(Object other) {
+        if (other == null)
             return false;
-        if(!(other instanceof ClackServer))
+        if (!(other instanceof ClackServer))
             return false;
-        ClackServer otherData = (ClackServer)other;
+        ClackServer otherData = (ClackServer) other;
         return this.port == otherData.port &&
                 this.closeConnection == otherData.closeConnection &&
                 this.dataToReceiveFromClient == otherData.dataToReceiveFromClient &&
@@ -90,12 +135,21 @@ public class ClackServer {
 
     /**
      * toString override
+     *
      * @return
      */
-    public String toString(){
+    public String toString() {
         return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +
                 "The data to send to client is: " + this.dataToSendToClient + "\n" +
                 "The connection status is: " + (this.closeConnection ? "Closed" : "Open") + "\n" +
                 "The port number is: " + this.port + "\n";
+    }
+
+    public static void main(String args[]) {
+            ClackServer server;
+            if (args.length == 0)
+                server = new ClackServer();
+            else
+                server = new ClackServer(Integer.parseInt(args[0]));
     }
 }
