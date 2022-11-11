@@ -1,3 +1,29 @@
+11/11/22
+Naida Torres
+Joseph LaPell
+
+ClackServer output:
+"C:\Program Files\Java\jdk1.8.0_341\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\lib\idea_rt.jar=51173:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_341\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\rt.jar;C:\Users\josep\IdeaProjects\CS242Project\out\production\CS242Project" main.ClackServer
+
+Process finished with exit code 0
+
+ClackClient output:
+"C:\Program Files\Java\jdk1.8.0_341\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\lib\idea_rt.jar=51178:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_341\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_341\jre\lib\rt.jar;C:\Users\josep\IdeaProjects\CS242Project\out\production\CS242Project" main.ClackClient Name@128.153.188.193:7000
+Test message
+User: Name
+Date: Fri Nov 11 11:59:41 EST 2022
+Message: Test message
+SENDFILE text.txt
+User: Name
+Date: Fri Nov 11 11:59:51 EST 2022
+Message: brave new world
+DONE
+User: Name
+Date: Fri Nov 11 11:59:57 EST 2022
+Message: DONE
+
+Process finished with exit code 0
+
 10/28/22
 Naida Torres
 Joseph LaPell
