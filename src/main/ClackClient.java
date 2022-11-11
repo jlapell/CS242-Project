@@ -129,7 +129,7 @@ public class ClackClient {
         switch (command) {
             case "DONE":
                 this.closeConnection = true;
-                this.dataToSendToServer = new MessageClackData(this.userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_SENDMESSAGE);
+                this.dataToSendToServer = new MessageClackData(this.userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_LOGOUT);
                 break;
             case "SENDFILE":
                 this.dataToSendToServer = new FileClackData(this.userName, inFromStd.next(), ClackData.CONSTANT_SENDFILE);

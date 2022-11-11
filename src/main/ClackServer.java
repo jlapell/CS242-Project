@@ -40,11 +40,12 @@ public class ClackServer {
     }
 
     /**
-     * Declaration of start method
+     * Does not return anything, gets connections from the client and
+     * echoes client data
      */
     public void start() {
         try {
-            ServerSocket sskt = new ServerSocket(CONSTANT_DEFAULTPORT);
+            ServerSocket sskt = new ServerSocket(port);
             Socket clientSkt = sskt.accept();
             inFromClient = new ObjectInputStream(clientSkt.getInputStream());
             outToClient = new ObjectOutputStream(clientSkt.getOutputStream());
@@ -67,12 +68,13 @@ public class ClackServer {
     }
 
     /**
-     * Declaration of receiveData method
+     * Receives data from client, does not return anything
      */
     public void receiveData() {
         try {
-            while(!closeConnection){//Dunno
-                dataToReceiveFromClient = (ClackData) inFromClient.readObject();
+            dataToReceiveFromClient = (ClackData) inFromClient.readObject();
+            if (dataToReceiveFromClient.getType() == ClackData.CONSTANT_LOGOUT) {
+                closeConnection = true;
             }
         }catch (IOException ioe) {
             System.err.println("IO exception occurred");
@@ -82,8 +84,9 @@ public class ClackServer {
     }
 
     /**
-     * Declaration of sendData method
+     * Sends data to client, does not return anything
      */
+
     public void sendData() {
         try {
             outToClient.writeObject(dataToSendToClient);
@@ -145,7 +148,13 @@ public class ClackServer {
                 "The port number is: " + this.port + "\n";
     }
 
-    public static void main(String args[]) {
+    /**
+     * main method
+     * uses command arguments to create a new ClackServer object
+     * and starts said object
+     * @param args
+     */
+    public static void main(String[] args) {
             ClackServer server;
             if (args.length == 0)
                 server = new ClackServer();
