@@ -90,18 +90,18 @@ public class ClackClient {
      * read data from the client
      * prints the data out
      */
-    public void start() { // ask TA if this is correct
+    public void start() {
         try {
             this.inFromStd = new Scanner(System.in);
             Socket skt = new Socket(hostName, port);
             outToServer = new ObjectOutputStream(skt.getOutputStream());
             inFromServer = new ObjectInputStream(skt.getInputStream());
+            ClientSideServerListener clientSideSL = new ClientSideServerListener(this);
+            Thread clientSideThread = new Thread(clientSideSL);
+            clientSideThread.start();
             while (!closeConnection) {
                 this.readClientData();
-                this.sendData(); // unsure
-                // 2.2 says to break this: dataToReceiveFromServer = this.dataToSendToServer;
-                this.receiveData(); // unsure
-                this.printData();
+                this.sendData();
             }
             inFromServer.close();
             outToServer.close();
@@ -140,8 +140,10 @@ public class ClackClient {
                     System.err.println("The file cannot be read: " + e);
                 }
                 break;
-            case "LISTUSERS":
-                // not yet implemented
+            case "LISTUSERS": // unsure
+                // answer to question: displays a message to users of all users in chat,
+                // uses constant list users variable to get users.
+                dataToSendToServer = new MessageClackData(this.userName, "", ClackData.CONSTANT_LISTUSERS);
                 break;
             default:
                 String message = command + this.inFromStd.nextLine();
@@ -226,6 +228,15 @@ public class ClackClient {
      */
     public int getPort() {
         return port;
+    }
+
+    /**
+     * returns closeConnection
+     *
+     * @return closeConnection
+     */
+    public boolean getCloseConnection() {
+        return closeConnection;
     }
 
     /**
