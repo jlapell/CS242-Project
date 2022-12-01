@@ -5,19 +5,17 @@ import data.FileClackData;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * ClackServer represents the clack server
  */
 public class ClackServer {
     protected int port;
     protected boolean closeConnection;
-    protected ClackData dataToReceiveFromClient;
-    protected ClackData dataToSendToClient;
     private static final int CONSTANT_DEFAULTPORT = 7000;
-
-    private ObjectInputStream inFromClient;
-
-    private ObjectOutputStream outToClient;
+    private ArrayList<ServerSideClientIO> serverSideClientIOArrayList;
 
     /**
      * Constructor that sets port number
@@ -28,8 +26,7 @@ public class ClackServer {
         if (port < 1024)
             throw new IllegalArgumentException("Port cannot be less than 1024.");
         this.port = port;
-        dataToSendToClient = null;
-        dataToReceiveFromClient = null;
+        serverSideClientIOArrayList = new ArrayList<>();
     }
 
     /**
@@ -37,6 +34,7 @@ public class ClackServer {
      */
     public ClackServer() {
         this(CONSTANT_DEFAULTPORT);
+        serverSideClientIOArrayList = new ArrayList<>();
     }
 
     /**
@@ -46,13 +44,11 @@ public class ClackServer {
     public void start() {
         try {
             ServerSocket sskt = new ServerSocket(port);
-            Socket clientSkt = sskt.accept();
-            inFromClient = new ObjectInputStream(clientSkt.getInputStream());
-            outToClient = new ObjectOutputStream(clientSkt.getOutputStream());
+            int i = 0;
             while (!closeConnection) {
-                this.receiveData();
-                dataToSendToClient = dataToReceiveFromClient;
-                this.sendData();
+                Socket clientSkt = sskt.accept();
+                ServerSideClientIO newUser = new ServerSideClientIO(,clientSkt);
+                serverSideClientIOArrayList.add(newUser);
             }
             outToClient.close();
             inFromClient.close();
@@ -68,40 +64,25 @@ public class ClackServer {
     }
 
     /**
-     * Receives data from client, does not return anything
-     */
-    public void receiveData() {
-        try {
-            dataToReceiveFromClient = (ClackData) inFromClient.readObject();
-            if (dataToReceiveFromClient.getType() == ClackData.CONSTANT_LOGOUT) {
-                closeConnection = true;
-            }
-        }catch (IOException ioe) {
-            System.err.println("IO exception occurred");
-        } catch (ClassNotFoundException cnfe) {
-            System.err.println("Class not found exception occurred");
-        }
-    }
-
-    /**
-     * Sends data to client, does not return anything
-     */
-
-    public void sendData() {
-        try {
-            outToClient.writeObject(dataToSendToClient);
-        } catch (IOException ioe) {
-            System.err.println("IO exception occurred");
-        }
-    }
-
-    /**
      * Method that returns the port
      *
      * @return port
      */
     public int getPort() {
         return port;
+    }
+
+    public synchronized void broadcast(ClackData dataToBroadcastToClients){
+        for (int i = 0; i < serverSideClientIOArrayList.size(); i++){
+            (serverSideClientIOArrayList.get(i)).setDataToSendToClient(dataToBroadcastToClients).;
+            (serverSideClientIOArrayList.get(i)).sendData();
+        }
+
+    }
+
+    public synchronized void remove(ServerSideClientIO serverSideClientToRemove){
+        Collections.sort(serverSideClientIOArrayList<new ServerSideClientIO >);
+        Collections.binarySearch(serverSideClientIOArrayList<ServerSideClientIO>, serverSideClientToRemove);
     }
 
     /**
@@ -155,11 +136,12 @@ public class ClackServer {
      * @param args
      */
     public static void main(String[] args) {
-            ClackServer server;
-            if (args.length == 0)
-                server = new ClackServer();
-            else
-                server = new ClackServer(Integer.parseInt(args[0]));
-            server.start();
+        ClackServer server;
+        if (args.length == 0)
+            server = new ClackServer();
+        else
+            server = new ClackServer(Integer.parseInt(args[0]));
+        server.start();
     }
 }
+
