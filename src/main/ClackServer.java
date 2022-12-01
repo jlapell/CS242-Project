@@ -26,7 +26,7 @@ public class ClackServer {
         if (port < 1024)
             throw new IllegalArgumentException("Port cannot be less than 1024.");
         this.port = port;
-        serverSideClientIOArrayList = new ArrayList<>();
+        this.serverSideClientIOArrayList = new ArrayList<>();
     }
 
     /**
@@ -47,12 +47,10 @@ public class ClackServer {
             int i = 0;
             while (!closeConnection) {
                 Socket clientSkt = sskt.accept();
-                ServerSideClientIO newUser = new ServerSideClientIO(,clientSkt);
+                ServerSideClientIO newUser = new ServerSideClientIO(this, clientSkt);
                 serverSideClientIOArrayList.add(newUser);
+                Thread thread = new Thread(newUser);
             }
-            outToClient.close();
-            inFromClient.close();
-            clientSkt.close();
             sskt.close();
         } catch (SecurityException se) {
             System.err.println("Security exception occurred");
@@ -74,15 +72,13 @@ public class ClackServer {
 
     public synchronized void broadcast(ClackData dataToBroadcastToClients){
         for (int i = 0; i < serverSideClientIOArrayList.size(); i++){
-            (serverSideClientIOArrayList.get(i)).setDataToSendToClient(dataToBroadcastToClients).;
+            (serverSideClientIOArrayList.get(i)).setDataToSendToClient(dataToBroadcastToClients);
             (serverSideClientIOArrayList.get(i)).sendData();
         }
-
     }
 
-    public synchronized void remove(ServerSideClientIO serverSideClientToRemove){
-        Collections.sort(serverSideClientIOArrayList<new ServerSideClientIO >);
-        Collections.binarySearch(serverSideClientIOArrayList<ServerSideClientIO>, serverSideClientToRemove);
+    public synchronized void remove(ServerSideClientIO serverSideClientToRemove) {
+        serverSideClientIOArrayList.remove(serverSideClientToRemove);
     }
 
     /**
@@ -94,8 +90,6 @@ public class ClackServer {
     public int hashCode() {
         int hash = 7;
         hash = 31 * hash + port;
-        hash = 31 * hash + (dataToReceiveFromClient == null ? 0 : dataToReceiveFromClient.hashCode());
-        hash = 31 * hash + (dataToSendToClient == null ? 0 : dataToSendToClient.hashCode());
         hash = 31 * hash + (closeConnection ? 0 : 1);
         return hash;
     }
@@ -112,9 +106,7 @@ public class ClackServer {
             return false;
         ClackServer otherData = (ClackServer) other;
         return this.port == otherData.port &&
-                this.closeConnection == otherData.closeConnection &&
-                this.dataToReceiveFromClient == otherData.dataToReceiveFromClient &&
-                this.dataToSendToClient == otherData.dataToSendToClient;
+                this.closeConnection == otherData.closeConnection;
     }
 
     /**
@@ -123,9 +115,7 @@ public class ClackServer {
      * @return
      */
     public String toString() {
-        return "The data to receive from client is: " + this.dataToReceiveFromClient + "\n" +
-                "The data to send to client is: " + this.dataToSendToClient + "\n" +
-                "The connection status is: " + (this.closeConnection ? "Closed" : "Open") + "\n" +
+        return "The connection status is: " + (this.closeConnection ? "Closed" : "Open") + "\n" +
                 "The port number is: " + this.port + "\n";
     }
 

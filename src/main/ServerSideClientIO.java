@@ -33,7 +33,7 @@ public class ServerSideClientIO implements Runnable{
             outToClient = new ObjectOutputStream(clientSocket.getOutputStream());
             while(!closeConnection){
                 this.receiveData();
-                this.server.broadcast();
+                this.server.broadcast(dataToSendToClient);
             }
         } catch (SecurityException se) {
             System.err.println("Security exception occurred");
@@ -48,7 +48,7 @@ public class ServerSideClientIO implements Runnable{
         try {
             dataToReceiveFromClient = (ClackData) inFromClient.readObject();
             if (dataToReceiveFromClient.getType() == ClackData.CONSTANT_LOGOUT) {
-                server.remove();
+                server.remove(this);
                 closeConnection = true;
             }
         }catch (IOException ioe) {
