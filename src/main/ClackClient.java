@@ -145,7 +145,7 @@ public class ClackClient {
                 // answer to question: displays a message to users of all users in chat,
                 // uses constant list users variable to get users.
                 // serverSideClientIOArrayList
-                this.dataToSendToServer = new MessageClackData(this.userName, "", ClackData.CONSTANT_LISTUSERS);
+                this.dataToSendToServer = new MessageClackData(this.userName, command, CONSTANT_DEFAULTKEY, ClackData.CONSTANT_LISTUSERS);
                 break;
             default:
                 String message = command + this.inFromStd.nextLine();

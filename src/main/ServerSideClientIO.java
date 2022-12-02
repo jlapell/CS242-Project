@@ -33,6 +33,8 @@ public class ServerSideClientIO implements Runnable{
             inFromClient = new ObjectInputStream(clientSocket.getInputStream());
             while(!closeConnection){
                 this.receiveData();
+                if(dataToReceiveFromClient.getType() == ClackData.CONSTANT_LISTUSERS)
+                    continue;
                 this.server.broadcast(dataToReceiveFromClient);
             }
         } catch (SecurityException se) {
@@ -59,6 +61,10 @@ public class ServerSideClientIO implements Runnable{
         } catch (ClassNotFoundException cnfe) {
             System.err.println("Class not found exception occurred");
         }
+    }
+
+    public String getUserName(){
+        return dataToSendToClient.getUserName();
     }
 
     public void sendData(){

@@ -1,6 +1,7 @@
 package main;
 import data.ClackData;
 import data.FileClackData;
+import data.MessageClackData;
 
 import java.io.*;
 import java.net.*;
@@ -79,14 +80,10 @@ public class ClackServer {
     public synchronized void listUser(){
         String usernames = "";
         for (ServerSideClientIO serverSideClientIO : serverSideClientIOArrayList) {
-            usernames += serverSideClientIO.getUserName();
-
+            usernames += serverSideClientIO.getUserName() + " | ";
         }
-
-        // MessageClackData
-        broadcast();
-
-
+        ClackData broadcastUserNames = new MessageClackData("Server", "List of users: " + usernames, "DefaultKey",ClackData.CONSTANT_LISTUSERS);
+        broadcast(broadcastUserNames);
     }
 
     public synchronized void remove(ServerSideClientIO serverSideClientToRemove) {
