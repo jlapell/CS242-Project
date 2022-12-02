@@ -76,6 +76,19 @@ public class ClackServer {
         }
     }
 
+    public synchronized void listUser(){
+        String usernames = "";
+        for (ServerSideClientIO serverSideClientIO : serverSideClientIOArrayList) {
+            usernames += serverSideClientIO.getUserName();
+
+        }
+
+        // MessageClackData
+        broadcast();
+
+
+    }
+
     public synchronized void remove(ServerSideClientIO serverSideClientToRemove) {
         serverSideClientIOArrayList.remove(serverSideClientToRemove);
     }

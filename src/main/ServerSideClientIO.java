@@ -51,6 +51,9 @@ public class ServerSideClientIO implements Runnable{
                 server.remove(this);
                 closeConnection = true;
             }
+            if (dataToReceiveFromClient.getType() == ClackData.CONSTANT_LISTUSERS) {
+                server.listUser();
+            }
         }catch (IOException ioe) {
             System.err.println("IO exception occurred");
         } catch (ClassNotFoundException cnfe) {
