@@ -1,5 +1,4 @@
 package main;
-import com.sun.security.ntlm.Server;
 import data.ClackData;
 import data.FileClackData;
 
@@ -44,12 +43,12 @@ public class ClackServer {
     public void start() {
         try {
             ServerSocket sskt = new ServerSocket(port);
-            int i = 0;
             while (!closeConnection) {
                 Socket clientSkt = sskt.accept();
                 ServerSideClientIO newUser = new ServerSideClientIO(this, clientSkt);
                 serverSideClientIOArrayList.add(newUser);
                 Thread thread = new Thread(newUser);
+                thread.start();
             }
             sskt.close();
         } catch (SecurityException se) {
@@ -71,9 +70,9 @@ public class ClackServer {
     }
 
     public synchronized void broadcast(ClackData dataToBroadcastToClients){
-        for (int i = 0; i < serverSideClientIOArrayList.size(); i++){
-            (serverSideClientIOArrayList.get(i)).setDataToSendToClient(dataToBroadcastToClients);
-            (serverSideClientIOArrayList.get(i)).sendData();
+        for (ServerSideClientIO serverSideClientIO : serverSideClientIOArrayList) {
+            serverSideClientIO.setDataToSendToClient(dataToBroadcastToClients);
+            serverSideClientIO.sendData();
         }
     }
 

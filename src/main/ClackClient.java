@@ -2,7 +2,9 @@ package main;
 
 import data.ClackData;
 import data.FileClackData;
+import data.ListUsersClackData;
 import data.MessageClackData;
+import main.ClackServer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -30,6 +32,7 @@ public class ClackClient {
     private ObjectOutputStream outToServer;
     private static final int CONSTANT_DEFAULTPORT = 7000;
     private static final String CONSTANT_DEFAULTKEY = "DefaultKey";
+
 
 
     /**
@@ -143,7 +146,8 @@ public class ClackClient {
             case "LISTUSERS": // unsure
                 // answer to question: displays a message to users of all users in chat,
                 // uses constant list users variable to get users.
-                dataToSendToServer = new MessageClackData(this.userName, "", ClackData.CONSTANT_LISTUSERS);
+                // serverSideClientIOArrayList
+                this.dataToSendToServer = new ListUsersClackData(userName, ClackData.CONSTANT_LISTUSERS);
                 break;
             default:
                 String message = command + this.inFromStd.nextLine();

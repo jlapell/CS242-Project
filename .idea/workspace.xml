@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="push">
+    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="ClackClient edited and new class ClientSideServerListener added 11/30/22">
+      <change afterPath="$PROJECT_DIR$/src/data/ListUsersClackData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ClackClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ClackServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ServerSideClientIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ServerSideClientIO.java" afterDir="false" />
     </list>
@@ -45,21 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
-  <component name="RunManager" selected="Application.TestClackData">
+}]]></component>
+  <component name="RunManager" selected="Application.ClackClient">
     <configuration name="ClackClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.ClackClient" />
       <module name="CS242Project" />
-      <option name="PROGRAM_PARAMETERS" value="Name@128.153.188.193:7000" />
+      <option name="PROGRAM_PARAMETERS" value="Naida@128.153.186.40:7000" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
@@ -115,9 +119,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.ClackServer.jar" />
         <item itemvalue="Application.ClackClient" />
         <item itemvalue="Application.ClackServer" />
+        <item itemvalue="JAR Application.ClackServer.jar" />
         <item itemvalue="JAR Application.ClackClient.jar" />
       </list>
     </recent_temporary>

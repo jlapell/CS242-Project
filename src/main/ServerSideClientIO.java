@@ -29,11 +29,11 @@ public class ServerSideClientIO implements Runnable{
     @Override
     public void run(){
         try{
-            inFromClient = new ObjectInputStream(clientSocket.getInputStream());
             outToClient = new ObjectOutputStream(clientSocket.getOutputStream());
+            inFromClient = new ObjectInputStream(clientSocket.getInputStream());
             while(!closeConnection){
                 this.receiveData();
-                this.server.broadcast(dataToSendToClient);
+                this.server.broadcast(dataToReceiveFromClient);
             }
         } catch (SecurityException se) {
             System.err.println("Security exception occurred");
