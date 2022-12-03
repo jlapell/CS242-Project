@@ -16,6 +16,11 @@ public class ServerSideClientIO implements Runnable{
     private ClackServer server;
     private Socket clientSocket;
 
+    /**
+     * Constructor that takes a ClackServer object and Socket object, sets closeConnection to false, and sets all other variables null
+     * @param server
+     * @param clientSocket
+     */
     public ServerSideClientIO(ClackServer server, Socket clientSocket){
         this.server = server;
         this.clientSocket = clientSocket;
@@ -26,6 +31,10 @@ public class ServerSideClientIO implements Runnable{
         outToClient = null;
     }
 
+    /**
+     * Overrides the run method in the Runnable interface
+     *
+     */
     @Override
     public void run(){
         try{
@@ -46,6 +55,10 @@ public class ServerSideClientIO implements Runnable{
         }
     }
 
+    /**
+     * Does not return anything, receives data from the client
+     *
+     */
     public void receiveData(){
         try {
             dataToReceiveFromClient = (ClackData) inFromClient.readObject();
@@ -63,10 +76,18 @@ public class ServerSideClientIO implements Runnable{
         }
     }
 
+    /**
+     * Method that is used by ClackServer to get username of client who sends a message
+     * @return
+     */
     public String getUserName(){
-        return dataToSendToClient.getUserName();
+        return dataToReceiveFromClient.getUserName();
     }
 
+    /**
+     * Does not return anything, sends data to the client
+     *
+     */
     public void sendData(){
         try {
             outToClient.writeObject(dataToSendToClient);
@@ -75,6 +96,10 @@ public class ServerSideClientIO implements Runnable{
         }
     }
 
+    /**
+     * mutator method to set the ClackData variable dataToSendToClient
+     * @param dataToSendToClient
+     */
     public void setDataToSendToClient(ClackData dataToSendToClient){
         this.dataToSendToClient = dataToSendToClient;
     }

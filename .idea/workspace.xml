@@ -4,13 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="ClackClient edited and new class ClientSideServerListener added 11/30/22">
+    <list default="true" id="f45083c5-58a1-4e16-8783-eeac7134968c" name="Changes" comment="we're done :D">
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/allclasses-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/allclasses-noframe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/ClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/FileClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/MessageClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/data/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/deprecated-list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/index-all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/ClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/ClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/ClientSideServerListener.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/ServerSideClientIO.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/main/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/overview-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/overview-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/package-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/serialized-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/TestClackClient.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/TestClackData.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/TestClackServer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/package-frame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/docFolder(Part4)/test/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/ClackClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ClackServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ClackServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/ServerSideClientIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ServerSideClientIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text3.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +94,7 @@
     <configuration name="ClackClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.ClackClient" />
       <module name="CS242Project" />
-      <option name="PROGRAM_PARAMETERS" value="Joseph@128.153.186.40" />
+      <option name="PROGRAM_PARAMETERS" value="TestUser@128.153.170.185" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
@@ -318,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669996468872</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="we're done :D">
+      <created>1670002834407</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1670002834407</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,6 +394,7 @@
     <MESSAGE value="Final Code" />
     <MESSAGE value="push" />
     <MESSAGE value="clackclient and ListUsersClackData edited and added" />
-    <option name="LAST_COMMIT_MESSAGE" value="clackclient and ListUsersClackData edited and added" />
+    <MESSAGE value="we're done :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="we're done :D" />
   </component>
 </project>

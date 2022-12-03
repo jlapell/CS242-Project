@@ -70,6 +70,10 @@ public class ClackServer {
         return port;
     }
 
+    /**
+     * Method that sends a message from one client to all clients
+     * @param dataToBroadcastToClients
+     */
     public synchronized void broadcast(ClackData dataToBroadcastToClients){
         for (ServerSideClientIO serverSideClientIO : serverSideClientIOArrayList) {
             serverSideClientIO.setDataToSendToClient(dataToBroadcastToClients);
@@ -77,6 +81,10 @@ public class ClackServer {
         }
     }
 
+    /**
+     * Method that broadcasts list of users to all users
+     *
+     */
     public synchronized void listUser(){
         String usernames = "";
         for (ServerSideClientIO serverSideClientIO : serverSideClientIOArrayList) {
@@ -86,6 +94,10 @@ public class ClackServer {
         broadcast(broadcastUserNames);
     }
 
+    /**
+     * method to remove a client from the serverSideClientIOArrayList
+     * @param serverSideClientToRemove
+     */
     public synchronized void remove(ServerSideClientIO serverSideClientToRemove) {
         serverSideClientIOArrayList.remove(serverSideClientToRemove);
     }
