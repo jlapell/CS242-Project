@@ -1,3 +1,31 @@
+12/3/22
+Naida Torres
+Joseph LaPell
+
+In your write-up, explain why there should be a separate class to receive data from the
+server and print it, and the client only gets data from the user and sends it to the server.
+Also, why is the class called a ‘listener’?
+
+In your write-up, explain why the broadcast() and remove() methods are synchronized.
+You may find it easier to answer this question after completing all programming.
+
+In your write-up, discuss all new methods and new code in existing
+methods that you wrote to handle LISTUSERS.
+
+Test output:
+Hello
+User: TestUser
+Date: Sat Dec 03 10:43:00 EST 2022
+Message: Hello
+LISTUSERS
+User: Server
+Date: Sat Dec 03 10:43:02 EST 2022
+Message: List of users: TestUser | 
+
+*** It did list multiple users and connected across computers, but when writing this I could not test with multiple users.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 11/11/22
 Naida Torres
 Joseph LaPell
@@ -23,6 +51,8 @@ Date: Fri Nov 11 11:59:57 EST 2022
 Message: DONE
 
 Process finished with exit code 0
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 10/28/22
 Naida Torres
