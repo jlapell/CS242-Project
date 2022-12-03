@@ -2,15 +2,28 @@
 Naida Torres
 Joseph LaPell
 
-In your write-up, explain why there should be a separate class to receive data from the
-server and print it, and the client only gets data from the user and sends it to the server.
-Also, why is the class called a ‘listener’?
+-In your write-up, explain why there should be a separate class to receive data from the
+-server and print it, and the client only gets data from the user and sends it to the server.
+-Also, why is the class called a ‘listener’?
+There is a seperate class because each class runs at the same time while doing
+different things. This allows the client to send and receive
+messages at the same time, not having to wait to send a message
+for the server response. It is called a listener because it "listens,"
+or waits for messages from the server.
 
-In your write-up, explain why the broadcast() and remove() methods are synchronized.
-You may find it easier to answer this question after completing all programming.
+-In your write-up, explain why the broadcast() and remove() methods are synchronized.
+These methods are syncronized because they work closesly together and if they were unsynchronized 
+may cause deadlock or other errors. I'm not sure the exact reasoning why, but considering new threads
+are being created that contain these methods, there are areas where there could be errors.
 
-In your write-up, discuss all new methods and new code in existing
-methods that you wrote to handle LISTUSERS.
+-In your write-up, discuss all new methods and new code in existing
+-methods that you wrote to handle LISTUSERS.
+We added a new method in ClackServer called listUser and a new method in ServerSideClientIO called getUserName.
+listUser is called when the receiveData method in ServerSideClientIO receives the CONSTANT_LISTUSERS value.
+The listUser method then iterates through the serverSideClientIOArray list and for every member of that list
+calls the getUserName method from ServerSideClientIO. This method calls the getUserName method from ClackData,
+and returns the username found from a ClackData object. These anems are then pushed back into a string, and then
+finally this string is broadcasted for all the clients/users.
 
 Test output:
 Hello
