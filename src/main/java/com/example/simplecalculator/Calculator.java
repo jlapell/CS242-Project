@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Calculator extends Application {
     public float numberA;
     public float numberB;
     public float finalAnswer;
@@ -22,19 +22,21 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Label numAL = new Label("Number A:");
-        TextField numA = new TextField("0");
         Label numBL = new Label("Number B: ");
-        TextField numB = new TextField("0");
         Label answerL = new Label("Ans: ");
-        TextField answer = new TextField("0");
-        answer.setEditable(false);
-        Button add = new Button("+");
-        Button subtract = new Button("-");
-        Button multiply = new Button("*");
-        Button divide = new Button("/");
-        TilePane r = new TilePane();
+
+        TextField numA = new TextField("0");
+        TextField numB = new TextField("0");
         numA.setMinWidth(700);
         numB.setMinWidth(700);
+        TextField answer = new TextField("0");
+        answer.setEditable(false);
+
+        Button add = new Button("+");
+        Button subtract = new Button("-");
+        Button multiply = new Button("x");
+        Button divide = new Button("÷");
+
         add.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
